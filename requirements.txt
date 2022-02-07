@@ -1,6 +1,3 @@
-from tarfile import PAX_NAME_FIELDS
-
-
 sqlalchemy
 pandas
 pymysql
