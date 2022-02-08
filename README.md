@@ -3,7 +3,7 @@
 Measuring electricity consumption with our ESP32 and our RaspberryPi. 
 
 <p align="center">
-  <img width="460" height="300" src="/images/Summ.PNG">
+  <img width="550" height="300" src="/images/Summ.PNG">
 </p>
 
 
