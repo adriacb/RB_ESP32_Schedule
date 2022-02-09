@@ -26,7 +26,7 @@ from email.message import EmailMessage
 from colorama import Fore, Back, Style
 
 
-def send_mail(msg: list, status, sender: str='adria.cabello@fredvic.com', password: str='Vic$2021', receiver:str ='adrian.cabello@alumni.esci.upf.edu'):
+def send_mail(msg: list, status, sender: str='adria.cabello@', password: str='', receiver:str ='adrian.cabello@'):
     
     if status == 'Correct':
         print(Back.GREEN +f"STATUS {status}"+Style.RESET_ALL)
@@ -108,3 +108,14 @@ def checkDirs(rootName: str):
             checkFile(dirs[p])
         
     return dirs
+
+
+import cryptpandas as crp
+
+def decrypt():
+    decrypted_df = crp.read_encrypted('file.crypt', password='Fredvic$22')
+    return decrypted_df
+
+
+cred = decrypt()
+#print(cred)

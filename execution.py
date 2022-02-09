@@ -18,7 +18,7 @@ import pymysql
 
 
 def create_table():
-    fredvic = DDBBConn(ddbbname='rasp_fv22', user='fredvic', passw='Fredvic$21', host='10.31.0.10', pool=3306)
+    fredvic = DDBBConn(ddbbname=cred['ddbbname'][0], user=cred['user'][0], passw=cred['pass'][0], host=cred['host'][0], pool=int(cred['pool'][0]) )
 
 
 
@@ -55,7 +55,7 @@ def create_table():
 
 
 def inserts(temp, hum, sens, curr, date):
-    fredvic = DDBBConn(ddbbname='rasp_fv22', user='fredvic', passw='Fredvic$21', host='10.31.0.10', pool=3306)
+    fredvic = DDBBConn(ddbbname=cred['ddbbname'][0], user=cred['user'][0], passw=cred['pass'][0], host=cred['host'][0], pool=int(cred['pool'][0]) )
     fredvic.query("""INSERT INTO data (Temperatura, Humitat, Sensacio_termica, Corrent, Curr_Date) VALUES (%s, %s, %s, %s);""", (temp, hum, sens, curr, date), debug=True)
     fredvic.close()
 
