@@ -30,13 +30,14 @@ def create_table():
                         Sensacio_termica FLOAT,
                         Corrent FLOAT,
                         Curr_Date TIMESTAMP NOT NULL,
+                        Zona VARCHAR(50),
                         PRIMARY KEY (ID)  
                         )
     """, debug=True)
 
 
 
-    fredvic.query("""SELECT * FROM data;""", debug=True)
+    #fredvic.query("""SELECT * FROM data;""", debug=True)
     fredvic.close()
 
 
