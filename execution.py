@@ -22,13 +22,28 @@ def create_table():
 
 
 
-    fredvic.query("drop table if exists data;", debug=True)
+    fredvic.query("drop table if exists Sensors_Temp;", debug=True)
     fredvic.query(""" 
-    CREATE TABLE data (ID INT NOT NULL AUTO_INCREMENT,
-                        Temperatura FLOAT,
-                        Humitat FLOAT,
-                        Sensacio_termica FLOAT,
+    CREATE TABLE Sensors_Temp (ID INT NOT NULL AUTO_INCREMENT,
+                    Temperatura_C FLOAT,
+                    Temperatura_F FLOAT,
+                    Humitat FLOAT,
+                    Sensacio_termica_C FLOAT,
+                    Sensacio_termica_F FLOAT,
+                    Curr_Date TIMESTAMP NOT NULL,
+                    Zona VARCHAR(50),
+                    PRIMARY KEY (ID)  
+                    )
+    """, debug=True)
+
+
+
+    fredvic.query("drop table if exists Hats;", debug=True)
+    fredvic.query(""" 
+    CREATE TABLE Hats (ID INT NOT NULL AUTO_INCREMENT,
                         Corrent FLOAT,
+                        Tensio FLOAT,
+                        Potencia FLOAT,
                         Curr_Date TIMESTAMP NOT NULL,
                         Zona VARCHAR(50),
                         PRIMARY KEY (ID)  
@@ -36,8 +51,6 @@ def create_table():
     """, debug=True)
 
 
-
-    #fredvic.query("""SELECT * FROM data;""", debug=True)
     fredvic.close()
 
 

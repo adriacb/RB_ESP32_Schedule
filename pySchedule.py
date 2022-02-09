@@ -6,7 +6,7 @@ Created on Mon Dec 20 14:20:05 2021
 """
 
 #conda install -c conda-forge schedule
-
+import os
 import schedule
 import time
 from MonitorDDBB import DDBBConn
@@ -51,9 +51,7 @@ def insert_csv_hats(path):
 def clear_table():
     schedule.clear()
     create_table()
-    #inserts()
-    #time.sleep(2)
-    #checkNullsAccions()    
+
 
 def main():
     schedule.every(5).minutes.do(insert_csv_temp, path=csv_path_temps)
