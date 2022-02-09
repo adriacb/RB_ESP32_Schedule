@@ -56,7 +56,7 @@ def clear_table():
 def main():
     schedule.every(5).minutes.do(insert_csv_temp, path=csv_path_temps)
     time.sleep(1) # wait for the first execution
-    schedule.every(5).minutes.do(insert_csv_hats, path=test_csv_hats)
+    #schedule.every(5).minutes.do(insert_csv_hats, path=test_csv_hats)
 
     #.hours.do, .days.do, .minutes.do, .seconds.do
 
